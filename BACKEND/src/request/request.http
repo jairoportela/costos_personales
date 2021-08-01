@@ -1,0 +1,12 @@
+###
+GET http://localhost:3000/expense
+
+###
+POST http://localhost:3000/expense
+content-type: application/json
+
+{
+    "title": "Pago Disney+",
+    "category":"Pagos recurrentes",
+    "value":24000
+}
