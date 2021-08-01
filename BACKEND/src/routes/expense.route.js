@@ -16,4 +16,25 @@ router.post("/", async (req, res) => {
         message: "Creado"
     });
 });
+
+router.put("/:id", async (req, res) => {
+    const id = req.params.id;
+    const { title, category, value } = req.body;
+    const editingExpence = await Expence.findById(id);
+    editingExpence.title = title ? title : editingExpence.title;
+    editingExpence.category = category ? category : editingExpence.category;
+    editingExpence.value = value ? value : editingExpence.value;
+    editingExpence.save();
+    res.json(editingExpence);
+});
+
+
+router.delete("/:id", async (req, res) => {
+    const id = req.params.id;
+    await Expence.findByIdAndDelete(id);
+    res.json({
+        message: "Eliminado"
+    });
+
+});
 module.exports = router;

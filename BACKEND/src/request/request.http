@@ -6,7 +6,20 @@ POST http://localhost:3000/expense
 content-type: application/json
 
 {
-    "title": "Pago Disney+",
-    "category":"Pagos recurrentes",
-    "value":24000
+    "title": "Pelicula Invictus",
+    "category":"Entretenimiento",
+    "value":12000
 }
+
+###
+PUT http://localhost:3000/expense/6107176de785b737acf8b73c
+content-type: application/json
+
+{
+    "title": "Pelicula Invictus",
+    "category":"Entretenimiento",
+    "value":12000
+}
+
+###
+DELETE http://localhost:3000/expense/6107178ce785b737acf8b73f
